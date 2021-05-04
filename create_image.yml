@@ -9,11 +9,11 @@
       chdir: /opt/docker
 
   - name: add tag to the image
-    command: docker tag calc-image chethanhms/calculatorimage
+    command: docker tag calc-image athirac/calculatorimage
 
   - name: push image to dockerhub
-    command: docker push chethanhms/calculatorimage
+    command: docker push athirac/calculatorimage
 
   - name: Remove image from ansible server
-    command: docker rmi calc-image chethanhms/calculatorimage
+    command: docker rmi calc-image athirac/calculatorimage
     ignore_errors: yes
