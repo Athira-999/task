@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  become: ture
+  #become: ture
 
   tasks:
   - name: Stop current running container
@@ -12,11 +12,11 @@
     ignore_errors: yes
 
   - name: Remove docker image
-    command: docker rmi chethanhms/calculatorimage
+    command: docker rmi athirac/calculatorimage
     ignore_errors: yes
 
   - name: Pull dockerImage from dockerhub
-    command: docker pull chethanhms/calculatorimage
+    command: docker pull athirac/calculatorimage
     
   - name: Create container using this image
-    command: docker container run -d --name calculator -p 8080:8080 chethanhms/calculatorimage
+    command: docker container run -d --name calculator -p 8080:8080 athirac/calculatorimage
